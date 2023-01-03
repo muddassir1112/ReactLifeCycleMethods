@@ -40,7 +40,10 @@ export default class Constructor extends Component {
     // console.log()
     return null 
   }
-  componentDidUpdate(){}
+//   After changing the theme console the updated value of state using above method.
+  componentDidUpdate(){
+    console.log(this.state.theme)
+  }
     changeTheme = () => {
     if (this.state.flag === true) {
       this.setState({ theme: this.props.theme1 });
