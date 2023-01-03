@@ -4,6 +4,7 @@ export default class Constructor extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      flag: true,
       theme: {
         backgroundColor: "#28231D",
         color: "white",
@@ -25,11 +26,26 @@ export default class Constructor extends Component {
   //     console.log(props.theme1);
   //     return { theme: props.theme1 };
   //   }
-  componentDidMount() {
-    setTimeout(() => {
+  //   componentDidMount() {
+  //     setTimeout(() => {
+  //       this.setState({ theme: this.props.theme1 });
+  //     }, 5000);
+  //   }
+  changeTheme = () => {
+    if (this.state.flag === true) {
       this.setState({ theme: this.props.theme1 });
-    }, 5000);
-  }
+      this.setState({ flag: false });
+    } else
+      this.setState({
+        theme: {
+          backgroundColor: "#28231D",
+          color: "white",
+          lineHeight: "1.5",
+          marginTop: "-1.7%",
+        },
+        flag: true,
+      });
+  };
   render() {
     return (
       <div style={this.state.theme}>
@@ -60,7 +76,9 @@ export default class Constructor extends Component {
             organizations that publish newspapers are themselves often
             metonymically called newspapers.{" "}
           </p>
-          <button style={this.state.button}>Click Here</button>
+          <button onClick={this.changeTheme} style={this.state.button}>
+            Click Here
+          </button>
         </div>
       </div>
     );
