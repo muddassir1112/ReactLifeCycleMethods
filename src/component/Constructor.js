@@ -21,6 +21,13 @@ export default class Constructor extends Component {
       }
     };
   }
+  static getDerivedStateFromProps(props,state){
+    console.log(props.theme1)
+    return (
+        {theme : props.theme1}
+        
+    )
+  }
   render() {
     return (
       <div style={this.state.theme}>
@@ -41,7 +48,7 @@ export default class Constructor extends Component {
           <p>
             Most newspapers are businesses, and they pay their expenses with a
             mixture of subscription revenue,{" "}
-            <a href="http://www.company.com/news.html" style={{color:"lightblue"}}>Latest News</a> newsstand
+            <a href="http://www.company.com/news.html" style={{color:"darkBlue"}}>Latest News</a> newsstand
             sales, and advertising revenue. The journalism organizations that
             publish newspapers are themselves often metonymically called
             newspapers.{" "}
