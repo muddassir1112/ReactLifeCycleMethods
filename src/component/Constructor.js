@@ -8,25 +8,22 @@ export default class Constructor extends Component {
         backgroundColor: "#28231D",
         color: "white",
         lineHeight: "1.5",
-        marginTop:"-1.7%"
+        marginTop: "-1.7%",
       },
       button: {
-        borderStyle : "solid",
-        backgroundColor : "blue",
-        borderRadius : "6px",
-        color:"white",
-        cursor:"pointer",
-        margin:"1% 0% 2% 43%",
-        padding:"8px 14px 8px 14px"
-      }
+        borderStyle: "solid",
+        backgroundColor: "blue",
+        borderRadius: "6px",
+        color: "white",
+        cursor: "pointer",
+        margin: "1% 0% 2% 43%",
+        padding: "8px 14px 8px 14px",
+      },
     };
   }
-  static getDerivedStateFromProps(props,state){
-    console.log(props.theme1)
-    return (
-        {theme : props.theme1}
-        
-    )
+  static getDerivedStateFromProps(props, state) {
+    console.log(props.theme1);
+    return { theme: props.theme1 };
   }
   render() {
     return (
@@ -48,10 +45,15 @@ export default class Constructor extends Component {
           <p>
             Most newspapers are businesses, and they pay their expenses with a
             mixture of subscription revenue,{" "}
-            <a href="http://www.company.com/news.html" style={{color:"darkBlue"}}>Latest News</a> newsstand
-            sales, and advertising revenue. The journalism organizations that
-            publish newspapers are themselves often metonymically called
-            newspapers.{" "}
+            <a
+              href="http://www.company.com/news.html"
+              style={{ color: "darkBlue" }}
+            >
+              Latest News
+            </a>{" "}
+            newsstand sales, and advertising revenue. The journalism
+            organizations that publish newspapers are themselves often
+            metonymically called newspapers.{" "}
           </p>
           <button style={this.state.button}>Click Here</button>
         </div>
