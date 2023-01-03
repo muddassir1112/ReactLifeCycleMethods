@@ -32,9 +32,16 @@ export default class Constructor extends Component {
   //     }, 5000);
   //   }
   shouldComponentUpdate(){
-    return false;
+    return true;
   }
-  changeTheme = () => {
+  // getSnapshotBeforUpdate called with componentDidUpdate 
+  getSnapshotBeforeUpdate(prevProps,prevState){
+    console.log(prevState.theme)
+    // console.log()
+    return null 
+  }
+  componentDidUpdate(){}
+    changeTheme = () => {
     if (this.state.flag === true) {
       this.setState({ theme: this.props.theme1 });
       this.setState({ flag: false });
