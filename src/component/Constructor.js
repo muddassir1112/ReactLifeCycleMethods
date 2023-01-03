@@ -31,6 +31,9 @@ export default class Constructor extends Component {
   //       this.setState({ theme: this.props.theme1 });
   //     }, 5000);
   //   }
+  shouldComponentUpdate(){
+    return false;
+  }
   changeTheme = () => {
     if (this.state.flag === true) {
       this.setState({ theme: this.props.theme1 });
