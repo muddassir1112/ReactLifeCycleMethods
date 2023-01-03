@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import ChildComponent from "./ChildComponent";
+import "../App.css";
 
 export default class Constructor extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      show: true,
       flag: true,
       theme: {
         backgroundColor: "#28231D",
@@ -31,20 +34,20 @@ export default class Constructor extends Component {
   //       this.setState({ theme: this.props.theme1 });
   //     }, 5000);
   //   }
-  shouldComponentUpdate(){
+  shouldComponentUpdate() {
     return true;
   }
-  // getSnapshotBeforUpdate called with componentDidUpdate 
-  getSnapshotBeforeUpdate(prevProps,prevState){
-    console.log(prevState.theme)
+  // getSnapshotBeforUpdate called with componentDidUpdate
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log(prevState.theme);
     // console.log()
-    return null 
+    return null;
   }
-//   After changing the theme console the updated value of state using above method.
-  componentDidUpdate(){
-    console.log(this.state.theme)
+  //   After changing the theme console the updated value of state using above method.
+  componentDidUpdate() {
+    console.log(this.state.theme);
   }
-    changeTheme = () => {
+  changeTheme = () => {
     if (this.state.flag === true) {
       this.setState({ theme: this.props.theme1 });
       this.setState({ flag: false });
@@ -58,6 +61,9 @@ export default class Constructor extends Component {
         },
         flag: true,
       });
+  };
+  hideChildComponent = () => {
+    this.setState({ show: false });
   };
   render() {
     return (
@@ -93,6 +99,10 @@ export default class Constructor extends Component {
             Click Here
           </button>
         </div>
+        {this.state.show === true ? <ChildComponent /> : null}
+        <button onClick={this.hideChildComponent} className="btn">
+          Hide Component
+        </button>
       </div>
     );
   }
