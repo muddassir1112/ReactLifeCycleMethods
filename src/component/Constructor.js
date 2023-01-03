@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 export default class Constructor extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       theme: {
         backgroundColor: "#28231D",
@@ -21,9 +21,14 @@ export default class Constructor extends Component {
       },
     };
   }
-  static getDerivedStateFromProps(props, state) {
-    console.log(props.theme1);
-    return { theme: props.theme1 };
+  //   static getDerivedStateFromProps(props, state) {
+  //     console.log(props.theme1);
+  //     return { theme: props.theme1 };
+  //   }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ theme: this.props.theme1 });
+    }, 5000);
   }
   render() {
     return (
