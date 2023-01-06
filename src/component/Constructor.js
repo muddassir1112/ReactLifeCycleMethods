@@ -25,10 +25,12 @@ export default class Constructor extends Component {
       },
     };
   }
+  // Task based on getDerivedStateFromProps is commmented as it is already committed
   //   static getDerivedStateFromProps(props, state) {
   //     console.log(props.theme1);
   //     return { theme: props.theme1 };
   //   }
+   // Task based on componentDidMount is commmented as it is already committed
   //   componentDidMount() {
   //     setTimeout(() => {
   //       this.setState({ theme: this.props.theme1 });
